@@ -11,7 +11,7 @@ export default function CheckoutModal({ items, onClose, onSuccess }) {
     e.preventDefault();
     
     // Format WhatsApp message
-    let message = `*New Order from Sahlab Store*\n\n*Customer Details:*\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}\n\n*Order Items:*\n`;
+    let message = `*New Order for Anthony from Sahlab Store*\n\n*Customer Details:*\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}\n\n*Order Items:*\n`;
     
     items.forEach(item => {
       message += `- ${item.quantity}x ${item.product.name} (${item.customization.name}) - $${(item.product.price * item.quantity).toFixed(2)}\n`;
@@ -20,7 +20,7 @@ export default function CheckoutModal({ items, onClose, onSuccess }) {
     message += `\n*Total: $${total.toFixed(2)}*`;
 
     // Open WhatsApp
-    const phoneNumber = "1234567890"; // TODO: Update to real WhatsApp number
+    const phoneNumber = "9613274884"; // Updated to Anthony's number
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
