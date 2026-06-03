@@ -154,3 +154,31 @@ body {
 .animate-slide-in-right {
   animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 2rem 1.5rem !important;
+    min-height: auto !important;
+  }
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  .modal-grid {
+    grid-template-columns: 1fr !important;
+    padding: 1rem !important;
+  }
+  .modal-image-container {
+    height: 300px !important;
+  }
+  .app-padding {
+    padding: 1rem !important;
+  }
+  .header-padding {
+    padding: 1rem !important;
+    margin: 0.5rem !important;
+  }
+  .checkout-grid {
+    flex-direction: column !important;
+  }
+}

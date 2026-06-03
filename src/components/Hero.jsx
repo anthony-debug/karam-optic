@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section style={{
+    <section className="hero-container" style={{
       position: 'relative',
       margin: '2rem 5%',
       borderRadius: 'var(--border-radius-lg)',
@@ -40,7 +40,7 @@ export default function Hero() {
         }}>
           Trending Now
         </span>
-        <h2 style={{ 
+        <h2 className="hero-title" style={{ 
           fontSize: '3rem', 
           margin: '0 0 1rem 0',
           lineHeight: 1.1,

@@ -49,7 +49,7 @@ function App() {
       
       <main>
         <Hero />
-        <div style={{ padding: '2rem 5%' }}>
+        <div className="app-padding" style={{ padding: '2rem 5%' }}>
           <ProductCatalog products={products} onAddToCart={addToCart} />
         </div>
       </main>

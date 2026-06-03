@@ -40,7 +40,7 @@ export default function CheckoutModal({ items, onClose, onSuccess }) {
               <input required type="text" placeholder="Full Name" style={inputStyle} />
               <input required type="email" placeholder="Email Address" style={inputStyle} />
               <input required type="text" placeholder="Street Address" style={inputStyle} />
-              <div style={{ display: 'flex', gap: '1rem' }}>
+              <div className="checkout-grid" style={{ display: 'flex', gap: '1rem' }}>
                 <input required type="text" placeholder="City" style={inputStyle} />
                 <input required type="text" placeholder="ZIP" style={inputStyle} />
               </div>
@@ -57,7 +57,7 @@ export default function CheckoutModal({ items, onClose, onSuccess }) {
             <h2 style={{ margin: '0 0 1.5rem 0' }}>Payment Information</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <input required type="text" placeholder="Card Number" maxLength="19" style={inputStyle} />
-              <div style={{ display: 'flex', gap: '1rem' }}>
+              <div className="checkout-grid" style={{ display: 'flex', gap: '1rem' }}>
                 <input required type="text" placeholder="MM/YY" maxLength="5" style={inputStyle} />
                 <input required type="text" placeholder="CVC" maxLength="4" style={inputStyle} />
               </div>

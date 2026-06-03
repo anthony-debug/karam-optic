@@ -3,7 +3,7 @@ import { ShoppingCart, Menu, User } from 'lucide-react';
 
 export default function Header({ cartItemCount, onOpenCart }) {
   return (
-    <header className="glass-panel" style={{
+    <header className="glass-panel header-padding" style={{
       position: 'sticky',
       top: '1rem',
       margin: '0 1rem',

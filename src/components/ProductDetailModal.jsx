@@ -20,7 +20,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart }) {
       zIndex: 1000,
       padding: '2rem'
     }}>
-      <div className="glass-panel animate-fade-in" style={{
+      <div className="glass-panel animate-fade-in modal-grid" style={{
         width: '100%',
         maxWidth: '1000px',
         maxHeight: '90vh',
@@ -39,7 +39,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart }) {
           <X size={24} />
         </button>
 
-        <div style={{ height: '500px', borderRadius: 'var(--border-radius-lg)', overflow: 'hidden' }}>
+        <div className="modal-image-container" style={{ height: '500px', borderRadius: 'var(--border-radius-lg)', overflow: 'hidden' }}>
           {product.type === '3d-print' ? (
             <ModelViewer color={selectedCustomization.colorHex} type={product.type} />
           ) : (
