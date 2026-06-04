@@ -34,7 +34,7 @@ export default function CheckoutModal({ items, onClose, onSuccess }) {
       position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
       background: 'rgba(0,0,0,0.8)', zIndex: 1100, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem'
     }}>
-      <div className="glass-panel animate-fade-in" style={{ width: '100%', maxWidth: '500px', padding: '2.5rem', position: 'relative' }}>
+      <div className="glass-panel animate-fade-in checkout-modal-panel" style={{ width: '100%', maxWidth: '500px', position: 'relative' }}>
         
         {step === 1 && (
           <form onSubmit={handleNext}>

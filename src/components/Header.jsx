@@ -2,7 +2,7 @@ import React from 'react';
 import { ShoppingCart, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function Header({ cartItemCount, onOpenCart }) {
+export default function Header({ cartItemCount, onOpenCart, onOpenCustomOrder }) {
   return (
     <header className="glass-panel header-padding" style={{
       position: 'sticky',
@@ -28,6 +28,9 @@ export default function Header({ cartItemCount, onOpenCart }) {
       </div>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <button className="btn-secondary" onClick={onOpenCustomOrder} style={{ padding: '6px 12px', fontSize: '0.875rem' }}>
+          Custom Order
+        </button>
         <Link to="/admin" className="btn-icon" title="Admin Dashboard">
           <User size={20} />
         </Link>

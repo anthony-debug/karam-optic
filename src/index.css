@@ -181,4 +181,7 @@ body {
   .checkout-grid {
     flex-direction: column !important;
   }
+  .checkout-modal-panel, .custom-modal-content {
+    padding: 1.5rem !important;
+  }
 }

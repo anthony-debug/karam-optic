@@ -8,12 +8,15 @@ import CheckoutModal from './components/CheckoutModal';
 import AdminDashboard from './components/AdminDashboard';
 import { products as defaultProducts } from './data/products';
 import { supabase } from './supabaseClient';
+import CustomOrderModal from './components/CustomOrderModal';
+import { Instagram, MessageCircle } from 'lucide-react';
 
 function Store() {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isCustomOrderOpen, setIsCustomOrderOpen] = useState(false);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -62,6 +65,7 @@ function Store() {
       <Header 
         cartItemCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)} 
         onOpenCart={() => setIsCartOpen(true)} 
+        onOpenCustomOrder={() => setIsCustomOrderOpen(true)}
       />
       
       <main>
@@ -91,6 +95,33 @@ function Store() {
           onSuccess={() => setCartItems([])}
         />
       )}
+
+      {isCustomOrderOpen && (
+        <CustomOrderModal onClose={() => setIsCustomOrderOpen(false)} />
+      )}
+
+      <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 100, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <a 
+          href="https://wa.me/9613274884" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="btn-icon" 
+          style={{ background: '#25D366', color: 'white', width: '50px', height: '50px', borderRadius: '50%', boxShadow: '0 4px 15px rgba(37, 211, 102, 0.4)', padding: 0 }}
+          title="Chat on WhatsApp"
+        >
+          <MessageCircle size={24} />
+        </a>
+        <a 
+          href="https://instagram.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="btn-icon" 
+          style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: 'white', width: '50px', height: '50px', borderRadius: '50%', boxShadow: '0 4px 15px rgba(220, 39, 67, 0.4)', padding: 0 }}
+          title="Follow on Instagram"
+        >
+          <Instagram size={24} />
+        </a>
+      </div>
     </div>
   );
 }
