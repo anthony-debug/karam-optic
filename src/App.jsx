@@ -112,7 +112,7 @@ function Store() {
           <MessageCircle size={24} />
         </a>
         <a 
-          href="https://instagram.com" 
+          href="https://www.instagram.com/sahlab.store/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn-icon" 
