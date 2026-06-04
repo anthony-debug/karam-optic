@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShoppingCart, Menu, User } from 'lucide-react';
+import { ShoppingCart, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Header({ cartItemCount, onOpenCart }) {
   return (
@@ -14,7 +15,6 @@ export default function Header({ cartItemCount, onOpenCart }) {
       zIndex: 100
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <button className="btn-icon"><Menu size={20} /></button>
         <h1 style={{ 
           margin: 0, 
           fontSize: '1.5rem', 
@@ -28,7 +28,9 @@ export default function Header({ cartItemCount, onOpenCart }) {
       </div>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <button className="btn-icon"><User size={20} /></button>
+        <Link to="/admin" className="btn-icon" title="Admin Dashboard">
+          <User size={20} />
+        </Link>
         <button className="btn-icon" onClick={onOpenCart} style={{ position: 'relative' }}>
           <ShoppingCart size={20} />
           {cartItemCount > 0 && (

@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ProductCatalog from './components/ProductCatalog';
 import CartDrawer from './components/CartDrawer';
 import CheckoutModal from './components/CheckoutModal';
-import { products } from './data/products';
+import AdminDashboard from './components/AdminDashboard';
+import { products as defaultProducts } from './data/products';
+import { supabase } from './supabaseClient';
 
-function App() {
+function Store() {
+  const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      const { data, error } = await supabase.from('products').select('*');
+      if (error || !data || data.length === 0) {
+        console.warn("Could not load from Supabase. Falling back to default catalog.");
+        setProducts(defaultProducts);
+      } else {
+        setProducts(data);
+      }
+    }
+    fetchProducts();
+  }, []);
 
   const addToCart = (product, customization, quantity) => {
     setCartItems(prev => {
@@ -49,7 +66,7 @@ function App() {
       
       <main>
         <Hero />
-        <div className="app-padding" style={{ padding: '2rem 5%' }}>
+        <div id="catalog" className="app-padding" style={{ padding: '2rem 5%' }}>
           <ProductCatalog products={products} onAddToCart={addToCart} />
         </div>
       </main>
@@ -75,6 +92,17 @@ function App() {
         />
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Store />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

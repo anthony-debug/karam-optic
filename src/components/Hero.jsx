@@ -56,7 +56,11 @@ export default function Hero() {
         }}>
           Celebrate the upcoming games with our exclusive 3D printed trophies and handmade crochet team mascots. Premium materials, personalized for you.
         </p>
-        <button className="btn-primary" style={{ fontSize: '1.125rem', padding: '12px 32px' }}>
+        <button 
+          className="btn-primary" 
+          style={{ fontSize: '1.125rem', padding: '12px 32px' }}
+          onClick={() => document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' })}
+        >
           Explore Collection <ArrowRight size={20} />
         </button>
       </div>
