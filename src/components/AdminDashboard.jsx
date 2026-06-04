@@ -15,6 +15,7 @@ export default function AdminDashboard() {
 
   const [formData, setFormData] = useState({
     name: '', category: '3D Prints', type: '3d-print', price: '', description: '', image: '',
+    optionsText: 'Deep Slate:#2f4f4f, Metallic Copper:#b87333'
   });
 
   useEffect(() => {
@@ -82,6 +83,13 @@ export default function AdminDashboard() {
     
     const imageUrl = await uploadImage();
 
+    const parsedOptions = formData.optionsText.split(',').map((opt, index) => {
+      const parts = opt.split(':');
+      const name = parts[0] ? parts[0].trim() : `Option ${index + 1}`;
+      const hex = parts[1] ? parts[1].trim() : '#ffffff';
+      return { id: `opt-${index}`, name, colorHex: hex };
+    });
+
     const productPayload = {
       name: formData.name,
       category: formData.category,
@@ -89,14 +97,8 @@ export default function AdminDashboard() {
       price: parseFloat(formData.price),
       description: formData.description,
       image: imageUrl,
-      customizationOptions: formData.type === '3d-print' ? [
-        { id: 'slate', name: 'Deep Slate', colorHex: '#2f4f4f' },
-        { id: 'copper', name: 'Metallic Copper', colorHex: '#b87333' }
-      ] : [
-        { id: 'vanilla', name: 'Warm Vanilla', colorHex: '#fdfbf7' },
-        { id: 'mocha', name: 'Mocha Brown', colorHex: '#6f4e37' }
-      ],
-      defaultCustomization: formData.type === '3d-print' ? 'slate' : 'vanilla'
+      customizationOptions: parsedOptions,
+      defaultCustomization: parsedOptions.length > 0 ? parsedOptions[0].id : 'opt-0'
     };
 
     if (editingId) {
@@ -113,8 +115,9 @@ export default function AdminDashboard() {
 
   function editProduct(p) {
     setEditingId(p.id);
+    const optsStr = (p.customizationOptions || []).map(o => `${o.name}:${o.colorHex}`).join(', ');
     setFormData({
-      name: p.name, category: p.category, type: p.type, price: p.price, description: p.description, image: p.image
+      name: p.name, category: p.category, type: p.type, price: p.price, description: p.description, image: p.image, optionsText: optsStr
     });
     setImageFile(null);
   }
@@ -122,7 +125,7 @@ export default function AdminDashboard() {
   function resetForm() {
     setEditingId(null);
     setImageFile(null);
-    setFormData({ name: '', category: '3D Prints', type: '3d-print', price: '', description: '', image: '' });
+    setFormData({ name: '', category: '3D Prints', type: '3d-print', price: '', description: '', image: '', optionsText: 'Deep Slate:#2f4f4f, Metallic Copper:#b87333' });
   }
 
   async function deleteProduct(id) {
@@ -179,6 +182,15 @@ export default function AdminDashboard() {
               </span>
               <input id="imageUpload" type="file" accept="image/*" style={{ display: 'none' }} onChange={e => setImageFile(e.target.files[0])} />
             </div>
+
+            <input 
+              required 
+              type="text" 
+              placeholder="Filaments/Yarn (e.g. Silk Gold:#d4af37, Charcoal:#333333)" 
+              style={inputStyle} 
+              value={formData.optionsText} 
+              onChange={e => setFormData({...formData, optionsText: e.target.value})} 
+            />
 
             <textarea required placeholder="Description" rows={4} style={inputStyle} value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
             
