@@ -9,7 +9,15 @@ import AdminDashboard from './components/AdminDashboard';
 import { products as defaultProducts } from './data/products';
 import { supabase } from './supabaseClient';
 import CustomOrderModal from './components/CustomOrderModal';
-import { Instagram, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+
+const InstagramIcon = ({ size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
 
 function Store() {
   const [products, setProducts] = useState([]);
@@ -119,7 +127,7 @@ function Store() {
           style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: 'white', width: '50px', height: '50px', borderRadius: '50%', boxShadow: '0 4px 15px rgba(220, 39, 67, 0.4)', padding: 0 }}
           title="Follow on Instagram"
         >
-          <Instagram size={24} />
+          <InstagramIcon size={24} />
         </a>
       </div>
     </div>
