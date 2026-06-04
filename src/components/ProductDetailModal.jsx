@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { X, ShoppingBag } from 'lucide-react';
-import ModelViewer from './ModelViewer';
 
 export default function ProductDetailModal({ product, onClose, onAddToCart }) {
   const [selectedCustomization, setSelectedCustomization] = useState(
@@ -40,26 +39,22 @@ export default function ProductDetailModal({ product, onClose, onAddToCart }) {
         </button>
 
         <div className="modal-image-container" style={{ height: '500px', borderRadius: 'var(--border-radius-lg)', overflow: 'hidden' }}>
-          {product.type === '3d-print' ? (
-            <ModelViewer color={selectedCustomization.colorHex} type={product.type} />
-          ) : (
-            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-               <img 
-                 src={product.image} 
-                 alt={product.name} 
-                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-               />
-               <div style={{
-                 position: 'absolute',
-                 bottom: '1rem', right: '1rem',
-                 background: selectedCustomization.colorHex,
-                 width: '40px', height: '40px',
-                 borderRadius: '50%',
-                 border: '2px solid white',
-                 boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
-               }} />
-            </div>
-          )}
+          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            <img 
+              src={selectedCustomization.imageUrl || product.image} 
+              alt={product.name} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'all 0.3s ease' }} 
+            />
+            <div style={{
+              position: 'absolute',
+              bottom: '1rem', right: '1rem',
+              background: selectedCustomization.colorHex,
+              width: '40px', height: '40px',
+              borderRadius: '50%',
+              border: '2px solid white',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
+            }} />
+          </div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', padding: '1rem 0' }}>
