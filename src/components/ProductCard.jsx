@@ -40,15 +40,16 @@ export default function ProductCard({ product, onClick }) {
           position: 'absolute',
           top: '12px',
           right: '12px',
-          background: 'rgba(18, 20, 22, 0.8)',
+          background: 'rgba(255, 255, 255, 0.9)',
           backdropFilter: 'blur(4px)',
           padding: '4px 10px',
           borderRadius: '12px',
           fontSize: '0.75rem',
           fontWeight: 'bold',
-          color: product.type === '3d-print' ? 'var(--color-accent-gold)' : 'var(--color-accent-pistachio)'
+          color: 'var(--color-text-main)',
+          border: '1px solid rgba(0,0,0,0.1)'
         }}>
-          {product.type === '3d-print' ? 'Precision Sculpted' : 'Crochet'}
+          {product.category}
         </div>
       </div>
       <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>

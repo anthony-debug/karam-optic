@@ -34,7 +34,7 @@ export default function AdminDashboard() {
   const [editingId, setEditingId] = useState(null);
 
   const [formData, setFormData] = useState({
-    name: '', category: 'Sculptures', type: '3d-print', price: '', description: ''
+    name: '', category: 'Eyeglasses', type: 'eyeglasses', price: '', description: ''
   });
 
   // selectedColors format: { [colorId]: { file: File | null, url: string } }
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
 
   function resetForm() {
     setEditingId(null);
-    setFormData({ name: '', category: 'Sculptures', type: '3d-print', price: '', description: '' });
+    setFormData({ name: '', category: 'Eyeglasses', type: 'eyeglasses', price: '', description: '' });
     setSelectedColors({});
   }
 
@@ -224,14 +224,15 @@ export default function AdminDashboard() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <input required type="number" step="0.01" placeholder="Price ($)" style={inputStyle} value={formData.price} onChange={e => setFormData({...formData, price: e.target.value})} />
               <select style={inputStyle} value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})}>
-                <option value="3d-print">Precision Sculpted Object</option>
-                <option value="crochet">Crochet Item</option>
+                <option value="eyeglasses">Eyeglasses</option>
+                <option value="sunglasses">Sunglasses</option>
+                <option value="lenses">Contact Lenses</option>
               </select>
             </div>
             <select style={inputStyle} value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}>
-              <option value="Sculptures">Sculptures</option>
-              <option value="Crochet">Crochet</option>
-              <option value="World Cup">World Cup</option>
+              <option value="Eyeglasses">Eyeglasses</option>
+              <option value="Sunglasses">Sunglasses</option>
+              <option value="Contact Lenses">Contact Lenses</option>
             </select>
             
             <textarea required placeholder="Product Description" rows={3} style={inputStyle} value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
