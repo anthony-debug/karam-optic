@@ -6,13 +6,13 @@ export default function ProductCatalog({ products, onAddToCart }) {
   const [filter, setFilter] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const categories = ['All', 'Sculptures', 'Crochet', 'World Cup'];
+  const categories = ['All', 'Eyeglasses', 'Sunglasses', 'Contact Lenses'];
 
   const filteredProducts = products.filter(p => {
     if (filter === 'All') return true;
-    if (filter === 'Sculptures') return p.type === '3d-print';
-    if (filter === 'Crochet') return p.type === 'crochet';
-    if (filter === 'World Cup') return p.category === 'World Cup';
+    if (filter === 'Eyeglasses') return p.category === 'Eyeglasses';
+    if (filter === 'Sunglasses') return p.category === 'Sunglasses';
+    if (filter === 'Contact Lenses') return p.category === 'Contact Lenses';
     return true;
   });
 
