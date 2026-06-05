@@ -48,7 +48,7 @@ export default function ProductCard({ product, onClick }) {
           fontWeight: 'bold',
           color: product.type === '3d-print' ? 'var(--color-accent-gold)' : 'var(--color-accent-pistachio)'
         }}>
-          {product.type === '3d-print' ? '3D Printed' : 'Crochet'}
+          {product.type === '3d-print' ? 'Precision Sculpted' : 'Crochet'}
         </div>
       </div>
       <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>

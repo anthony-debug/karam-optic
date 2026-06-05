@@ -6,11 +6,11 @@ export default function ProductCatalog({ products, onAddToCart }) {
   const [filter, setFilter] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const categories = ['All', '3D Prints', 'Crochet', 'World Cup'];
+  const categories = ['All', 'Sculptures', 'Crochet', 'World Cup'];
 
   const filteredProducts = products.filter(p => {
     if (filter === 'All') return true;
-    if (filter === '3D Prints') return p.type === '3d-print';
+    if (filter === 'Sculptures') return p.type === '3d-print';
     if (filter === 'Crochet') return p.type === 'crochet';
     if (filter === 'World Cup') return p.category === 'World Cup';
     return true;

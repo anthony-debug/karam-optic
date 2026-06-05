@@ -31,7 +31,7 @@ export default function CustomOrderModal({ onClose }) {
           <form onSubmit={handleNext}>
             <h2 style={{ margin: '0 0 1rem 0' }}>Request Custom Order</h2>
             <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-              Have a special 3D print or crochet idea in mind? Describe it below and we'll discuss the details on WhatsApp!
+              Have a special sculpture or crochet idea in mind? Describe it below and we'll discuss the details on WhatsApp!
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <input 

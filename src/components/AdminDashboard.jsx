@@ -34,7 +34,7 @@ export default function AdminDashboard() {
   const [editingId, setEditingId] = useState(null);
 
   const [formData, setFormData] = useState({
-    name: '', category: '3D Prints', type: '3d-print', price: '', description: ''
+    name: '', category: 'Sculptures', type: '3d-print', price: '', description: ''
   });
 
   // selectedColors format: { [colorId]: { file: File | null, url: string } }
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
 
   function resetForm() {
     setEditingId(null);
-    setFormData({ name: '', category: '3D Prints', type: '3d-print', price: '', description: '' });
+    setFormData({ name: '', category: 'Sculptures', type: '3d-print', price: '', description: '' });
     setSelectedColors({});
   }
 
@@ -224,12 +224,12 @@ export default function AdminDashboard() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <input required type="number" step="0.01" placeholder="Price ($)" style={inputStyle} value={formData.price} onChange={e => setFormData({...formData, price: e.target.value})} />
               <select style={inputStyle} value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})}>
-                <option value="3d-print">3D Printed Object</option>
+                <option value="3d-print">Precision Sculpted Object</option>
                 <option value="crochet">Crochet Item</option>
               </select>
             </div>
             <select style={inputStyle} value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}>
-              <option value="3D Prints">3D Prints</option>
+              <option value="Sculptures">Sculptures</option>
               <option value="Crochet">Crochet</option>
               <option value="World Cup">World Cup</option>
             </select>

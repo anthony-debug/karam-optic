@@ -74,7 +74,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart }) {
 
           <div>
             <h4 style={{ margin: '0 0 1rem 0' }}>
-              Select {product.type === '3d-print' ? 'Filament Color' : 'Yarn Color'}: 
+              Select {product.type === '3d-print' ? 'Material Color' : 'Yarn Color'}: 
               <span style={{ color: 'var(--color-text-muted)', marginLeft: '0.5rem', fontWeight: 'normal' }}>
                 {selectedCustomization.name}
               </span>

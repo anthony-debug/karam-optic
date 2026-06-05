@@ -5,7 +5,7 @@ export const products = [
     category: 'World Cup',
     type: '3d-print',
     price: 45.0,
-    description: 'A highly detailed, 3D printed miniature replica of the World Cup trophy. Perfect for desk display.',
+    description: 'A highly detailed, precision-sculpted miniature replica of the World Cup trophy. Perfect for desk display.',
     baseMaterial: 'PLA Plastic',
     customizationOptions: [
       { id: 'gold', name: 'Silk Gold', colorHex: '#d4af37' },
@@ -36,10 +36,10 @@ export const products = [
   {
     id: '3',
     name: 'The Swirl Planter',
-    category: '3D Prints',
+    category: 'Sculptures',
     type: '3d-print',
     price: 28.0,
-    description: 'An elegant 3D printed geometric planter with a sweeping cinnamon-swirl pattern.',
+    description: 'An elegant artisan-sculpted geometric planter with a sweeping cinnamon-swirl pattern.',
     baseMaterial: 'Matte PETG',
     customizationOptions: [
       { id: 'cinnamon', name: 'Cinnamon Amber', colorHex: '#d97706' },
@@ -68,10 +68,10 @@ export const products = [
   {
     id: '5',
     name: 'Hexagon Coaster Set',
-    category: '3D Prints',
+    category: 'Sculptures',
     type: '3d-print',
     price: 22.0,
-    description: 'Set of 4 structural 3D printed hexagonal coasters with a sleek modern design.',
+    description: 'Set of 4 structural artisan-sculpted hexagonal coasters with a sleek modern design.',
     baseMaterial: 'PLA Plastic',
     customizationOptions: [
       { id: 'slate', name: 'Deep Slate', colorHex: '#2f4f4f' },
@@ -87,7 +87,7 @@ export const products = [
     category: 'Crochet',
     type: 'crochet',
     price: 40.0,
-    description: 'A cute hand-crocheted cup mascot representing a warm cup of Sahlab. Comes with a tiny 3D printed spoon.',
+    description: 'A cute hand-crocheted cup mascot representing a warm cup of Sahlab. Comes with a tiny artisan-sculpted spoon.',
     baseMaterial: 'Cotton Blend',
     customizationOptions: [
       { id: 'classic', name: 'Classic Vanilla', colorHex: '#fdfbf7' },
