@@ -19,11 +19,10 @@ export default function Header({ cartItemCount, onOpenCart, onOpenCustomOrder })
           margin: 0, 
           fontSize: '1.5rem', 
           fontWeight: '700',
-          background: 'linear-gradient(to right, var(--color-text-main), var(--color-accent-cinnamon))',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
+          color: 'var(--color-text-main)',
+          letterSpacing: '-0.5px'
         }}>
-          Sahlab Store
+          Karam Optic
         </h1>
       </div>
       

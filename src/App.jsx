@@ -110,7 +110,7 @@ function Store() {
 
       <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 100, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <a 
-          href="https://wa.me/9613274884" 
+          href="https://wa.me/YOUR_NUMBER_HERE" 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn-icon" 
@@ -120,7 +120,7 @@ function Store() {
           <MessageCircle size={24} />
         </a>
         <a 
-          href="https://www.instagram.com/sahlab.store/" 
+          href="https://www.instagram.com/karam.optic/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn-icon" 
