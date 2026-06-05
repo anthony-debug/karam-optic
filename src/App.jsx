@@ -110,7 +110,7 @@ function Store() {
 
       <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 100, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <a 
-          href="https://wa.me/YOUR_NUMBER_HERE" 
+          href="https://wa.me/9613254884" 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn-icon" 
